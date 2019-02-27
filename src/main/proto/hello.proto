@@ -1,0 +1,28 @@
+//使用proto3
+syntax = "proto3";
+
+//包名，防止不同项目之间的命名冲突
+package hello;
+
+//用于生成的java包，如果没有明确指定，将会使用 package的值也就是在本文中的 hello
+option java_package = "cn.yase.grpc.proto";
+//生成的java类名，如果不指定将会以 .proto文件名进行处理(如：foo_bar.proto 将会生成 FooBar.java)
+option java_outer_classname = "MonitorProto";
+
+option java_multiple_files = true;
+
+//GRPC存在以下四种服务定义
+service HelloService {
+
+    //一元RPC：客户端发送一个请求到服务端，服务端返回一个响应给客户端
+    rpc SayHello (HelloRequest) returns (HelloResponse) {}
+
+}
+
+message HelloRequest {
+    string greeting = 1;
+}
+
+message HelloResponse {
+    string reply = 1;
+}
