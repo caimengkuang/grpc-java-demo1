@@ -94,7 +94,7 @@ message HelloResponse {
 mvn clean install
 ```
 可以看见生成了 target文件其中 GRPC生成的代码在如下位置:
-<br>![image](https://github.com/caimengkuang/grpc/blob/master/grpc-java-demo/20190227194036.png)<br>
+<br>![image](https://github.com/caimengkuang/grpc-java-demo1/blob/master/20190227194036.png)<br>
 从上图与.proto文件相比较，可以知道:cn.yase.grpc.proto 就是 hello.proto 中 java_package的属性值（取这个值的原因是为了后面将生成的代码放到src/main/java/cn/yase/proto 目录下)
 
 在src/main/java将grpc生成的代码移动到 src/main/cn/yase/proto目录下
